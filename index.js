@@ -9,13 +9,13 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
-        console.log('Ready!');
+  console.log('Ready!');
 });
 
 // When the client sees a message, send the ID to the snowflake channel.
 client.on('messageCreate', (message) => {
-        if(message.author.id === botId) return;
-        client.channels.cache.get(channelId).send(message.id);
+  if(message.author.id === botId) return;
+  client.channels.cache.get(channelId).send(message.id);
 })
 
 client.commands = new Collection();
